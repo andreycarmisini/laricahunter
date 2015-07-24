@@ -1,0 +1,42 @@
+<div class="page-header">
+<h1  class="text-danger">Cardápios</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr class="table">
+      <th>Estabelecimento</th>
+      <th>Descricao</th>
+      <th>Produto</th>
+      <th>Preco</th>
+      <th>Foto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cardapios.each do |cardapio| %>
+      <tr class="table">
+        <td><%= cardapio.estabelecimento.nomefantasia %></td>
+        <td><%= cardapio.descricao %></td>
+        <td><%= cardapio.produto.nome %></td>
+        <td><%= cardapio.preco %></td>
+        <td><%= image_tag cardapio.foto.url(:thumb) %></td>
+        
+        <% if (!current_user.nil?)  %>
+          <td><%= link_to 'Exibir', cardapio %></td>
+          <td><%= link_to 'Editar', edit_cardapio_path(cardapio) %></td>
+          <td><%= link_to 'Excluir', cardapio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%  if (!current_user.nil?)  %>
+<%= link_to t('.new', :alt => "MyLogo", :default => t("helpers.links.new")),
+            new_cardapio_path,
+            :class => 'btn btn-warning'  %>
+<% end %>   
+
+

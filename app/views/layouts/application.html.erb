@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Larica Hunter</title>
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="bootstrap/css/modern-business.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background:#FFB90B; padding-top:20px;">
+        <div class="container" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                </button>
+                <a class="navbar-brand" href="/" id="home-link">LARICA HUNTER</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+              <li class="nav-header"><hr></li>
+                <% if user_signed_in? %>
+                    <% if policy(User).index? %>
+                        <div style="position: fixed; right: 7%; margin-top:-15px;font-text:10px;">
+                            Usuário:<%= current_user.email %> | 
+                            <%= link_to 'SAIR', destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'delete' %>
+                            </div>
+                        <li><%= link_to "CATEGORIA", "/categoria"  %></li>
+                        <li><%= link_to "PRODUTOS", "/produtos"  %></li>
+                        <li><%= link_to "CARDÁPIO", "/cardapios"  %></li>
+                        <li><%= link_to 'PRATOS-TÍPICOS', "/prato_tipicos" %></li>
+                        <li><%= link_to "ESTABELECIMENTOS", "/estabelecimentos"  %></li>
+                        <li><%= link_to 'USUÁRIOS', "/control_users/index" %></li>
+                        <li></li>
+                    <% else %>  
+                    <div style="position: fixed; right: 7%; margin-top:-15px;font-text:10px;">
+                       Usuário: <%= current_user.email %> |  
+                       <%= link_to 'SAIR', destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'delete' %>
+                        </div>
+                        <li><%= link_to "MENUS DE CARDÁPIOS", "/cardapios"  %></li>
+                        
+                       
+                    <% end %>   
+                <% else %>
+                    <li><%= link_to 'ENTRAR', new_user_session_path %></li>
+                    
+                    <div style="position: fixed; right: 7%; margin-top:-15px;font-text:10px;color:#4C4C4C;">
+                        <li id="pesquisando-em"></li>
+                    <a href="/" id="city-search">Mudar cidade</a>
+                    </div>
+                <% end %> 
+                    </ul>
+            </div>
+        </div>
+    </nav>
+                  
+    <div class="container" style="margin-top:100px;">
+        <%  if current_page?('/') || current_page?('/home') || current_page?('/home/index') %>    
+            <div class="well" style="outline: 1px solid #333333; background:#F5F5F5;">
+               <center> <h3  style="padding-bottom:10px;">ÁREA DE BUSCA</h3></center>
+                <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+                <div class="input-group" style="width: 100%;height:50px;text-align: center;">
+                    <%= text_field_tag :search, params[:search], placeholder: "Busca por Estabelecimento ou prato", :class => "form-control", :style => "height:50px;text-align: center;" %>
+                        <br/>
+                        <%= submit_tag "PESQUISAR", :class => 'btn btn-warning', 
+                        :style => "width: 30%;height:50px; margin-top: 20px; outline: 1px solid #000;"%>
+                    <% end %>
+                 </div>
+            </div>
+        <% end %>
+        
+        <!-- Marketing Icons Section --><p/>
+        <div class="row">
+            
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div> 
+             
+ <div class="container">
+      <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-6" >
+                    <p>Equipe Larica Hunter - 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>

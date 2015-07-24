@@ -1,0 +1,42 @@
+<%= form_for(@prato_tipico) do |f| %>
+  <% if @prato_tipico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prato_tipico.errors.count, "error") %> prohibited this prato_tipico from being saved:</h2>
+
+      <ul>
+      <% @prato_tipico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+  <div class="field">
+   <div class="control-group">
+    <%= f.label :municipios_id, :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select(:municipios_id,@municipio, :id, :nome, include_blank: "Opções", :class => 'form-control') %>
+    </div>
+    <%= error_span(@prato_tipico[:municipios_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :produtos_id, :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select(:produtos_id,@produto, :id, :nome, include_blank: "Opções", :class => 'form-control') %>
+    </div>
+    <%= error_span(@prato_tipico[:produtos_id]) %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= f.submit "Cadastrar", :class => 'btn btn-warning' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+            prato_tipicos_path, :class => 'btn btn-default' %>
+  
+  </div>
+<% end %>
+</div>

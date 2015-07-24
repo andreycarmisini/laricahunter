@@ -1,0 +1,100 @@
+<div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+  <div class="field">
+<%- model_class = Estabelecimento -%>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>CNPJ:</strong>
+  <%= @estabelecimento.cnpj %>
+</p>
+
+<p>
+  <strong>Razão Social:</strong>
+  <%= @estabelecimento.razaosocial %>
+</p>
+
+<p>
+  <strong>Nome Fantasia:</strong>
+  <%= @estabelecimento.nomefantasia %>
+</p>
+
+<p>
+  <strong>Logradouro:</strong>
+  <%= @estabelecimento.logradouro %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @estabelecimento.numero %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @estabelecimento.complemento %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @estabelecimento.bairro %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @estabelecimento.cep %>
+</p>
+
+<p>
+  <strong>Fone1:</strong>
+  <%= @estabelecimento.fone1 %>
+</p>
+
+<p>
+  <strong>Fone2:</strong>
+  <%= @estabelecimento.fone2 %>
+</p>
+
+<p>
+  <strong>Fone3:</strong>
+  <%= @estabelecimento.fone3 %>
+</p>
+
+<p>
+  <strong>Hora de abertura:</strong>
+  <%= @estabelecimento.horaabertura.to_s(:time) %>
+</p>
+
+<p>
+  <strong>Hora de fechamento:</strong>
+  <%= @estabelecimento.horafechamento.to_s(:time) %>
+</p>
+
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @estabelecimento.municipio.nome %>
+</p>
+
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @estabelecimento.user.email %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  
+  <td><%= image_tag @estabelecimento.avatar.url(:thumb) %></td> 
+</p>
+
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              estabelecimentos_path, :class => 'btn btn-warning'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_estabelecimento_path(@estabelecimento), :class => 'btn btn-default' %>
+              
+              </div>

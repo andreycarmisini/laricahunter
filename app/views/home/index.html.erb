@@ -1,0 +1,41 @@
+
+
+<% #debug params %>
+  <% @todos.each do |todo| %>
+     <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                     <h3><%= todo.nomefantasia  %></h3>
+                    </div>
+                    <div class="panel-body">
+                   <center>     
+                       <p><%= link_to image_tag( todo.avatar.url(:medium) ), "/cardapios/?param1=#{todo.id}", :class =>"img-thumbnail" %></p>
+                       <h5><strong><%= todo.fone1  %></strong></h5>
+                       
+                        <!-- <a href="#" class="btn btn-warning" style="width:90%;">Ver cardápio</a></br></br> -->
+                         <%= link_to "Ver cardápio", "/cardapios?param1=#{todo.id}" , :class => "btn btn-warning" , :style => "width:90%;" %></br></br>
+                        <h10><strong>Endereço: <%= todo.logradouro  %> - <%= todo.numero %> - CEP: <%= todo.cep %></strong></h10></br>
+                        <h10><strong>Atendimento: <%= todo.horaabertura.to_s(:time)  %> - <%= todo.horafechamento.to_s(:time)  %></strong></h10>
+                        </center>
+                    </div>
+                </div>
+  </div>
+<% end %>
+
+</div><hr>
+<center><h3>Pratos Típicos</h3></center>
+<% @pratostipicoscardapio.each do |cardapio| %>
+     <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+             <h3><%= cardapio.produto.nome %></h3>
+            </div>
+            <div class="panel-body">
+           <center>     
+               <p><%= link_to_if(false, image_tag( cardapio.foto.url(:medium) ), "/cardapios/?param1=#{cardapio.id}", :class =>"img-thumbnail") %></p>
+               <h5><strong><%= cardapio.estabelecimento.nomefantasia  %></strong></h5>
+                </center>
+            </div>
+        </div>
+  </div>
+<% end %>

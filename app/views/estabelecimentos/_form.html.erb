@@ -1,0 +1,105 @@
+<%= form_for(@estabelecimento) do |f| %>
+  <% if @estabelecimento.errors.any? %>
+  
+    <div id="error_explanation">
+      <h2><%= pluralize(@estabelecimento.errors.count, "error") %> prohibited this estabelecimento from being saved:</h2>
+
+      <ul>
+      <% @estabelecimento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+  <div class="field">
+  
+   <div class="field">
+    <%= f.label :cnpj %><br>
+    <%= f.number_field :cnpj , :style => "margin-left:20px;width: 40%;height:30px;"%>
+    
+  </div>
+  <div class="field">
+    <%= f.label :razaosocial %><br>
+    <%= f.text_field :razaosocial, :style => "margin-left:20px;width: 40%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :nomefantasia %><br>
+    <%= f.text_field :nomefantasia , :style => "margin-left:20px;width: 40%;height:30px;"%>
+  </div>
+  <div class="field">
+    <%= f.label :logradouro %><br>
+    <%= f.text_field :logradouro, :style => "margin-left:20px;width: 40%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.number_field :numero, :style => "margin-left:20px;width: 10%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :complemento %><br>
+    <%= f.text_field :complemento, :style => "margin-left:20px;width: 30%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro %><br>
+    <%= f.text_field :bairro, :style => "margin-left:20px;width: 30%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br>
+    <%= f.text_field :cep, :style => "margin-left:20px;width: 20%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :fone1 %><br>
+    <%= f.text_field :fone1, :style => "margin-left:20px;width: 20%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :fone2 %><br>
+    <%= f.text_field :fone2, :style => "margin-left:20px;width: 20%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :fone3 %><br>
+    <%= f.text_field :fone3, :style => "margin-left:20px;width: 20%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :horaabertura %><br>
+    <%= f.time_select :horaabertura, :style => "margin-left:20px;width: 10%;height:30px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :horafechamento %><br>
+    <%= f.time_select :horafechamento, :style => "margin-left:20px;width: 10%;height:30px;" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :municipios_id, :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select(:municipios_id,@municipios, :id, :nome, include_blank: "Opções", :class => 'form-control') %>
+    </div>
+    <%= error_span(@estabelecimento[:municipios_id]) %>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :users_id, :class => 'control-label' %>
+    <div class="controls">
+     <%= f.collection_select(:users_id,@users, :id, :email, include_blank: "Opções", :class => 'form-control') %>
+    </div>
+    <%= error_span(@estabelecimento[:users_id]) %>
+  </div>
+  
+  <div class="control-group">
+     <%= f.label :Imagem, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :avatar, :class => 'form-control', :style => "margin-left:20px;width: 40%;height:40px;" %>
+    </div>
+    <%= error_span(@estabelecimento[:avatar_file_name]) %>
+  </div>
+  
+  <br><br>
+  
+  <div class="actions">
+    <%= f.submit "Cadastrar", :class => 'btn btn-warning' %>
+  </div>
+<% end %>
+</div>

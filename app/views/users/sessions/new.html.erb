@@ -1,0 +1,28 @@
+
+<div style="width: 400px;
+    height: 400px;
+    outline: 1px solid #333333;
+    background:#F5F5F5;
+    position: relative;
+    left: 50%;
+    margin-left: -200px;
+    padding-top:10px;">
+  <div class="page-header">
+  <center><h1>Área de Login</h1></center>
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field" style="margin: 0 auto; padding-top:0px;padding-left:20%;">
+    <h3>E-mail</h3>
+    <%= f.email_field :email, autofocus: true , :style => "width: 80%;height:40px;" %>
+  </div>
+
+  <div class="field" style="margin: 0 auto; padding-top:0px;padding-left:20%;">
+     <h3 style="text-align: left;">Senha</h3>
+    <%= f.password_field :password, autocomplete: "off", :style => "padding-top:0px;width: 80%;height:40px;" %>
+  </div>
+
+  <div class="actions" style="margin: 0 auto;padding-top:10px;padding-left:20%;">
+    <%= f.submit "Acessar", :style => "width: 80%;height:45px;"  %>
+  </div>
+<% end %>
+</div>

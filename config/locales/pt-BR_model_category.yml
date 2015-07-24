@@ -1,0 +1,10 @@
+"pt-BR":
+   activerecord:
+    models:
+      categoriay: Categoria
+    attributes:
+      category:
+        id: "Código"
+        description: "Descrição"
+        
+        

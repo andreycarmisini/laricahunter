@@ -1,0 +1,15 @@
+"pt-BR":
+  activerecord:
+    models:
+      product: Produto
+    attributes:
+      product:
+        id: "Código"
+        description: "Descrição"
+        category_id: "Categoria"
+        avatar_file_name: "Imagem"
+ 
+  
+         
+   
+        

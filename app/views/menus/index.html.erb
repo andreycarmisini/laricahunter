@@ -1,0 +1,26 @@
+
+ <% @teste.each do |test| %>
+  <h1 class="text-danger" ><%= test.name %></h1>
+ <% end %>
+<div class="page-header">
+ 
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+     
+  </thead>
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr class="table">
+        <td><%= menu.product.description %></td>
+        <td><%= menu.price %></td>
+         <td><%= image_tag menu.product.avatar.url(:thumb) %></td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.back', :default => t("helpers.links.back")), root_path, :class => 'btn btn-default'  %>

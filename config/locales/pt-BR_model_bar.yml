@@ -1,0 +1,10 @@
+"pt-BR":
+   activerecord:
+    models:
+      bar: Estabelecimento
+    attributes:
+      bar:
+        id: "Código"
+        name: "Descrição"
+        category_id: "Categoria"
+        avatar_file_name: "Imagem"

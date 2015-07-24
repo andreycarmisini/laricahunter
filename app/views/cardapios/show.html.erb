@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @cardapio.descricao %>
+</p>
+
+<p>
+  <strong>Estabelecimento:</strong>
+  <%= @cardapio.estabelecimento.nomefantasia %>
+</p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @cardapio.produto.nome %>
+</p>
+
+<p>
+  <strong>Preco:</strong>
+  <%= @cardapio.preco %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  
+  <td><%= image_tag @cardapio.foto.url(:thumb) %></td> 
+</p>
+
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_cardapio_path(@cardapio), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              cardapio_path(@cardapio),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,1 @@
+json.extract! @estabelecimento, :id, :cnpj, :razaosocial, :nomefantasia, :logradouro, :numero, :complemento, :bairro, :cep, :fone1, :fone2, :fone3, :horaabertura, :horafechamento, :created_at, :updated_at

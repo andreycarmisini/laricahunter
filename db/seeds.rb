@@ -1,0 +1,53 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+=begin
+Uf.create(sigla: 'SC', nome: 'Santa Catarina')
+Uf.create(sigla: 'CE', nome: 'Ceará')
+Uf.create(sigla: 'SP', nome: 'São Paulo')
+Uf.create(sigla: 'ES', nome: 'Espírito Santo')
+Uf.create(sigla: 'RJ', nome: 'Rio de Janeiro')
+Uf.create(sigla: 'PB', nome: 'Paraíba')
+Uf.create(sigla: 'BA', nome: 'Bahia')
+Uf.create(sigla: 'PR', nome: 'Paraná')
+Uf.create(sigla: 'RS', nome: 'Rio Grande do Sul')
+Uf.create(sigla: 'RN', nome: 'Rio Grande do Norte')
+Uf.create(sigla: 'PE', nome: 'Pernambuco')
+Uf.create(sigla: 'SE', nome: 'Sergipe')
+Uf.create(sigla: 'AL', nome: 'Alagoas')
+Uf.create(sigla: 'PI', nome: 'Piauí')
+Uf.create(sigla: 'MA', nome: 'Maranhão')
+Uf.create(sigla: 'AM', nome: 'Amazonas')
+Uf.create(sigla: 'PR', nome: 'Pará')
+Uf.create(sigla: 'RR', nome: 'Roraima')
+Uf.create(sigla: 'AC', nome: 'Acre')
+Uf.create(sigla: 'RO', nome: 'Rondônia')
+Uf.create(sigla: 'AP', nome: 'Amapá')
+Uf.create(sigla: 'MT', nome: 'Mato Grosso')
+Uf.create(sigla: 'MS', nome: 'Mato Grosso do Sul')
+Uf.create(sigla: 'TO', nome: 'Tocatins')
+Uf.create(sigla: 'GO', nome: 'Goiás')
+Uf.create(sigla: 'MG', nome: 'Minas Gerais')
+Uf.create(sigla: 'DF', nome: 'Distrito Federal')
+
+
+Municipio.create(nome: 'São Paulo', ufs_id: 3)
+Municipio.create(nome: 'Rio de Janeiro', ufs_id: 5)
+Municipio.create(nome: 'Porto Alegre', ufs_id: 9)
+Municipio.create(nome: 'Curitiba', ufs_id: 8)
+Municipio.create(nome: 'Salvador', ufs_id: 7)
+Municipio.create(nome: 'Vitória', ufs_id: 4)
+Municipio.create(nome: 'Belo Horizonte', ufs_id: 26)
+Municipio.create(nome: 'Rio Branco', ufs_id: 19)
+Municipio.create(nome: 'Manaus', ufs_id: 16)
+Municipio.create(nome: 'Aracaju', ufs_id: 12)
+Municipio.create(nome: 'Natal', ufs_id: 10)
+Municipio.create(nome: 'Maceió', ufs_id: 13)
+Municipio.create(nome: 'Palmas', ufs_id: 24)
+Municipio.create(nome: 'Teresina', ufs_id: 14)
+Municipio.create(nome: 'Cuiabá', ufs_id: 23)
+=end

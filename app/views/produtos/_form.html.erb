@@ -1,0 +1,41 @@
+  <div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+  <div class="field">
+<%= form_for(@produto) do |f| %>
+  <% if @produto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+      <% @produto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome, :style => "margin-left:20px;" %><br>
+    <%= f.text_field :nome, :style => "margin-left:20px;width: 40%;height:30px;" %>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :categorias_id, :style => "margin-left:20px;" %>
+    <div class="controls" style ="margin-left:20px;">
+     <%= f.collection_select(:categorias_id, @categorium, :id, :nome, include_blank: "Opções", :class => 'form-control') %>
+    </div>
+    <%= error_span(@produto[:categorias_id]) %>
+  </div>
+  
+  <br />
+  <div class="actions">
+    
+    <%= f.submit "Cadastrar", :class => 'btn btn-warning', :style => "margin-left:20px;" %>
+    <%= link_to t('.back', :default => t("helpers.links.back")), produtos_path, :class => 'btn btn-default'  %>
+  </div>
+<% end %>
+</div>

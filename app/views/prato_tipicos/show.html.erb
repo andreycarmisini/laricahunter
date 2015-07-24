@@ -1,0 +1,23 @@
+<div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+<p id="notice">Operação Concluída</p>
+<p>
+  <strong>Produtos:</strong>
+  <%= @prato_tipico.produto.nome %>
+</p>
+
+<p>
+  <strong>Municipios:</strong>
+  <%= @prato_tipico.municipio.nome %>
+</p>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              prato_tipicos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_prato_tipico_path(@prato_tipico), :class => 'btn btn-default' %>
+
+              </div>

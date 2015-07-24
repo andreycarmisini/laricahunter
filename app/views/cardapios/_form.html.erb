@@ -1,0 +1,63 @@
+<%= form_for @cardapio , :html => { :class => "form-horizontal product" }  do |f| %>
+  <% if @cardapio.errors.any? %>
+    <div id="error_explanation" class="panel panel-danger">
+      <h2><%= pluralize(@cardapio.errors.count, "error") %> prohibited this cardapio from being saved:</h2>
+
+      <ul>
+      <% @cardapio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div style="width: 100%;
+        outline: 1px solid #333333;
+    background:#F5F5F5;
+    left: 50%;
+    margin-left: 0px;
+    padding:10px;"> 
+  <div class="field">
+    <%= f.label :descricao, :style => "margin-left:10px;" %><br>
+    <%= f.text_field :descricao, :style => "margin-left:20px;width: 40%;height:30px;" %>
+  </div>
+  
+ <div class="control-group">
+    <%= f.label :estabelecimentos_id, :class => 'control-label' %>
+    <div class="controls" style ="height:40px;">
+     <%= f.collection_select(:estabelecimentos_id,@estabelecimento, :id, :nomefantasia, include_blank: "Opções") %>
+    </div>
+    <%= error_span(@cardapio[:estabelecimentos_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :produto_id, :style => "margin-left:20px;"%>
+    <div style = "margin-left:20px;height:30px;">
+     <%= f.collection_select(:produto_id,@produto, :id, :nome, include_blank: "Opções") %>
+    </div>
+    <%= error_span(@cardapio[:produto_id]) %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :preco , :style => "margin-left:10px;"%><br>
+    <%= f.text_field :preco, :style => "margin-left:20px;height:30px; width:60px;" %>
+  </div>
+
+
+  
+  
+  
+   <div class="">
+     <%= f.label :Imagem, :style => "margin-left:10px;" %>
+    <div class="controls">
+      <%= f.file_field :foto,  :style => "margin-left:20px;height:40px;" %>
+    </div>
+    <%= error_span(@cardapio[:foto_file_name]) %>
+  </div>
+  
+ </br>
+  <%= f.submit "Cadastrar Cardápio", :class => 'btn btn-warning'  %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),cardapios_path, :class => 'btn btn-default'  %>
+<% end %>
+</div>
