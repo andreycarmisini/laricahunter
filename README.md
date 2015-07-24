@@ -17,9 +17,9 @@ Dessa forma, o contexo do projeto é o compartilhamento de itens de menu de bare
 ## Ambiente de Produção
 A aplicação pode ser acessada em https://laricahunter-hotcyv.c9.io/
 
-## Ambiente de Treinamento
-A aplicação pode ser acessada em https://laricahunter-treinamento-hotcyv.c9.io/
 
 ## Documentação disponível em:
 
-Aqui o link
+
+## Vídeo demonstrativo:
+https://www.youtube.com/watch?v=ndSJYMHTusI
