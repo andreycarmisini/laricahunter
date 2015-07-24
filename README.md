@@ -12,8 +12,13 @@ Dessa forma, o contexo do projeto é o compartilhamento de itens de menu de bare
 - Victor Gonçalves <vg3@cin.ufpe.br>
 - Wilson Flavio Rodrigues <wfr@cin.ufpe.br>
 
-## Ambiente de teste
+
+
+## Ambiente de Produção
 A aplicação pode ser acessada em https://laricahunter-hotcyv.c9.io/
+
+## Ambiente de Treinamento
+A aplicação pode ser acessada em https://laricahunter-treinamento-hotcyv.c9.io/
 
 ## Documentação disponível em:
 

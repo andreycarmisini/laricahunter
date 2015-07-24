@@ -1,4 +1,4 @@
-<%= form_for @cardapio , :html => { :class => "form-horizontal product" }  do |f| %>
+<%= form_for @cardapio , :html => { :class => "form-horizontal product", :multipart => true }  do |f| %>
   <% if @cardapio.errors.any? %>
     <div id="error_explanation" class="panel panel-danger">
       <h2><%= pluralize(@cardapio.errors.count, "error") %> prohibited this cardapio from being saved:</h2>

@@ -2,7 +2,7 @@ class Estabelecimento < ActiveRecord::Base
   belongs_to :municipio, foreign_key: 'municipios_id'
   belongs_to :user, foreign_key: 'users_id'
   has_many :cardapios, foreign_key: 'estabelecimentos_id', :dependent => :destroy
-  accepts_nested_attributes_for :cardapios
+  #accepts_nested_attributes_for :cardapios
   
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
