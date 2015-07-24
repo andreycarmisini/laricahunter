@@ -22,4 +22,4 @@ A aplicação pode ser acessada em https://laricahunter-hotcyv.c9.io/
 
 
 ## Vídeo demonstrativo:
-https://www.youtube.com/watch?v=ndSJYMHTusI
+O vídeo demonstrativo pode ser acessado em: https://www.youtube.com/watch?v=ndSJYMHTusI
