@@ -19,7 +19,7 @@ A aplicação pode ser acessada em https://laricahunter-hotcyv.c9.io/
 
 
 ## Documentação disponível em:
-
+A documentação do Larica Hunter pode ser acessada em: https://github.com/hotcyv/laricahunter/blob/master/Relatorio_Final.pdf
 
 ## Vídeo demonstrativo:
 O vídeo demonstrativo pode ser acessado em: https://www.youtube.com/watch?v=ndSJYMHTusI
