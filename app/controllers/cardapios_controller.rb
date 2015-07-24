@@ -10,15 +10,14 @@ class CardapiosController < ApplicationController
 
   def index
      @param1 = params[:param1] 
-    
-     if !@user.nil? && policy(User).index?
+
+     if !current_user.nil? && current_user.role == 'admin' #policy(User).index?
         @cardapios = Cardapio.all
      else
         if @param1 != nil && current_user.nil?
           @cardapios = Cardapio.where(estabelecimentos_id: Estabelecimento.select('id').where('id' => @param1))
         else
           @cardapios = Cardapio.where(estabelecimentos_id: Estabelecimento.select('id').where('users_id' => current_user.id))
-          
         end
      end
     

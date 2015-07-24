@@ -15,3 +15,6 @@ Dessa forma, o contexo do projeto é o compartilhamento de itens de menu de bare
 ## Ambiente de teste
 A aplicação pode ser acessada em https://laricahunter-hotcyv.c9.io/
 
+## Documentação disponível em:
+
+Aqui o link
